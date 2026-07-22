@@ -56,22 +56,10 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Pick publish directory
-        id: publish-dir
-        shell: bash
-        run: |
-          if [[ -d dist ]]; then
-            echo "path=dist" >> "$GITHUB_OUTPUT"
-          elif [[ -d build ]]; then
-            echo "path=build" >> "$GITHUB_OUTPUT"
-          else
-            echo "path=." >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ steps.publish-dir.outputs.path }}
+          path: '.'
 
   deploy:
     needs: build
