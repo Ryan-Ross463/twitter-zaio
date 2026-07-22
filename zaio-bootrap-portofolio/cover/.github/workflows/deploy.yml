@@ -3,7 +3,7 @@ name: Deploy static site
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
 
 permissions:
@@ -71,7 +71,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ steps.publish-dir.outputs.path }}
+          path: ./cover
 
   deploy:
     needs: build
