@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./dist/output.css" rel="stylesheet">
+  <title>Explore / Twitter Clone</title>
+</head>
+
+<body class="bg-black text-white">
+<div class="max-w-[1700px] mx-auto flex justify-center items-start">
+
+  <!--The Left Sidebar -->
+  <nav class="hidden sm:flex w-16 md:w-20 lg:w-1/5 h-screen sticky top-0 border-r border-neutral-800 p-2 lg:p-3 flex-col justify-between shrink-0">
+
+    <div class="flex-1 min-h-0 overflow-y-auto scrollbar-thin flex flex-col">
+      <!-- Logo links back to home -->
+      <a href="index.html">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="w-8 h-8 fill-white mb-1 ml-3">
+          <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.823.162-1.258.162-.307 0-.605-.03-.895-.088.605 1.89 2.367 3.268 4.455 3.308-1.594 1.25-3.6 1.997-5.786 1.997-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"/>
+        </svg>
+      </a>
+
+      <ul id="nav-items" class="flex flex-col items-center lg:items-start gap-0"></ul>
+
+      <button class="bg-blue-400 text-white font-bold w-10 h-10 lg:w-full lg:h-auto p-0 lg:py-3.5 lg:px-4 mt-3 rounded-full text-base hover:bg-blue-500 transition flex items-center justify-center">
+        <span class="hidden lg:inline">Tweet</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="w-5 h-5 fill-white lg:hidden">
+          <path d="M12 2.595l5.707 5.707-1.414 1.414L13 6.414V16h-2V6.414l-3.293 3.293-1.414-1.414L12 2.595zM21 20v-7h2v7c0 1.103-.897 2-2 2H3c-1.103 0-2-.897-2-2v-7h2v7h18z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="flex items-center justify-center lg:justify-start gap-3 p-2 lg:p-3 hover:bg-neutral-900 rounded-full cursor-pointer transition mb-2">
+      <img src="https://pbs.twimg.com/profile_images/1710911871551685633/0r6g1j7A_400x400.jpg" alt="User Avatar" class="w-9 h-9 rounded-full shrink-0">
+      <div class="hidden lg:block min-w-0">
+        <p class="font-bold text-sm truncate">Ryan Ross</p>
+        <p class="text-gray-500 text-sm truncate">@ross_ryan38740</p>
+      </div>
+    </div>
+  </nav>
+
+  <main class="w-full sm:flex-1 sm:min-w-0 lg:w-1/2 lg:flex-none border-r border-neutral-800 min-h-screen">
+
+    <header class="sticky top-0 bg-black/90 backdrop-blur z-10 border-b border-neutral-800">
+
+      <div class="flex items-center gap-3 px-4 py-3">
+        <div class="relative flex-1">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none">
+            <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current">
+              <path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.621-1.899l3.858 3.858 1.414-1.414-3.858-3.858c1.173-1.202 1.899-2.826 1.899-4.621 0-3.59-2.91-6.5-6.5-6.5zm0 2c2.485 0 4.5 2.015 4.5 4.5s-2.015 4.5-4.5 4.5-4.5-2.015-4.5-4.5 2.015-4.5 4.5-4.5z"/>
+            </svg>
+          </span>
+          <input
+            id="explore-search"
+            type="text"
+            placeholder="Search"
+            class="w-full bg-neutral-800 border border-neutral-700 text-white pl-11 pr-4 py-2.5 rounded-full outline-none focus:border-blue-400 focus:bg-neutral-900 transition text-base placeholder-gray-500"
+          >
+        </div>
+
+        <!-- Settings / gear icon -->
+        <button class="p-2 rounded-full hover:bg-white/10 text-gray-500 hover:text-white transition shrink-0">
+          <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current">
+            <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+          </svg>
+        </button>
+      </div>
+
+      <div id="explore-tabs" class="flex"></div>
+    </header>
+    <section>
+      <h2 class="font-extrabold text-xl px-4 pt-4 pb-2 border-b border-neutral-800">Today&apos;s News</h2>
+      <div id="news-list" class="explore-divider"></div>
+    </section>
+
+    <!-- ── Trending ── -->
+    <section class="mb-8">
+      <h2 class="font-extrabold text-xl px-4 pt-5 pb-2 border-b border-neutral-800">Trending</h2>
+      <div id="trending-list" class="explore-divider"></div>
+    </section>
+
+  </main>
+
+  <!-- The Right Sidebar -->
+  <aside class="hidden xl:flex w-1/3 h-screen sticky top-0 overflow-y-auto scrollbar-thin p-3 flex-col gap-2 ml-4">
+
+    <!-- Trends for you -->
+    <div class="bg-gray-900 rounded-2xl overflow-hidden mt-4">
+      <h2 class="font-bold text-xl px-4 pt-4 mb-1">Trends for you</h2>
+      <div id="trends-list"></div>
+      <div class="p-4 hover:bg-gray-800 cursor-pointer transition rounded-b-2xl">
+        <p class="text-blue-400">Show more</p>
+      </div>
+    </div>
+
+    <!-- Who to follow -->
+    <div class="bg-gray-900 rounded-2xl overflow-hidden">
+      <h2 class="font-bold text-xl px-4 pt-4 mb-1">Who to follow</h2>
+      <div id="follow-list"></div>
+      <div class="p-4 hover:bg-gray-800 cursor-pointer transition rounded-b-2xl">
+        <p class="text-blue-400">Show more</p>
+      </div>
+    </div>
+
+    <!-- Footer links -->
+    <div class="px-4 text-xs text-gray-500">
+      <div class="flex flex-wrap gap-2">
+        <a href="#" class="hover:underline">Terms of Service</a>
+        <a href="#" class="hover:underline">Privacy Policy</a>
+        <a href="#" class="hover:underline">Cookie Policy</a>
+        <a href="#" class="hover:underline">Accessibility</a>
+        <a href="#" class="hover:underline">Ads info</a>
+        <a href="#" class="hover:underline">More&hellip;</a>
+        <span>&copy; 2022 Twitter, Inc.</span>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<!-- ── Mobile bottom nav ── -->
+<nav class="sm:hidden fixed bottom-0 left-0 right-0 bg-black border-t border-neutral-800 flex justify-around items-center py-2 z-20">
+  <a href="index.html" class="p-2 rounded-full hover:bg-white/10 transition">
+    <svg viewBox="0 0 24 24" class="w-7 h-7 fill-current"><path d="M21.58 13.06l-1.52-1.51-7.06-7c-.54-.53-1.42-.53-1.96 0l-7.06 7-1.52 1.51c-.39.4-.39 1.03 0 1.42.19.2.46.3.71.3h1.27v6.23c0 .55.45 1 1 1h4V14h4v5.01h4c.55 0 1-.45 1-1v-6.23h1.27c.25 0 .52-.1.71-.3.4-.39.4-1.02 0-1.42z"/></svg>
+  </a>
+  <a href="explore.html" class="p-2 rounded-full hover:bg-white/10 transition">
+    <svg viewBox="0 0 24 24" class="w-7 h-7 fill-blue-400"><path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.42 0 2.73-.46 3.81-1.24l4.97 4.97c.2.2.45.3.71.3s.51-.1.71-.29c.39-.39.39-1.03 0-1.42l-4.97-4.97c.78-1.08 1.24-2.39 1.24-3.81 0-3.59-2.91-6.5-6.5-6.5zm-4.5 6.5c0-2.48 2.02-4.5 4.5-4.5s4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5-4.5-2.02-4.5-4.5z"/></svg>
+  </a>
+  <button class="p-2 rounded-full hover:bg-white/10 transition">
+    <svg viewBox="0 0 24 24" class="w-7 h-7 fill-current"><path d="M21.16 14.85l-1.7-1.74V8.55c0-4.11-2.91-7.55-6.84-8.31V0H11.4v.24C7.45 1 4.54 4.44 4.54 8.55v4.56l-1.7 1.74C2.31 15.38 2 16.03 2 16.71V18c0 .55.45 1 1 1h6.05c.23 2.27 2.14 4 4.47 4s4.24-1.73 4.47-4H21c.55 0 1-.45 1-1v-1.29c0-.68-.31-1.33-.84-1.86zM13.52 21c-1.29 0-2.35-.91-2.48-2h4.96c-.13 1.09-1.19 2-2.48 2z"/></svg>
+  </button>
+  <button class="p-1 rounded-full hover:bg-white/10 transition">
+    <img src="https://pbs.twimg.com/profile_images/1710911871551685633/0r6g1j7A_400x400.jpg" alt="User Avatar" class="w-7 h-7 rounded-full">
+  </button>
+</nav>
+<div class="sm:hidden h-16"></div>
+
+<!-- Load order matters: shared utilities → shared components → explore → entry point -->
+<script src="src/components/icons.js"></script>
+<script src="src/components/Nav.js"></script>
+<script src="src/components/Sidebar.js"></script>
+<script src="src/components/Explore.js"></script>
+<script src="src/app-explore.js"></script>
+</body>
+
+</html>

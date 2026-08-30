@@ -5,3 +5,16 @@
   --font-sans: "Inter", sans-serif;
   --default-font-family: var(--font-sans);
 }
+
+/* hide scrollbar visually while keeping scroll functionality */
+.scrollbar-thin {
+  scrollbar-width: none;
+}
+.scrollbar-thin::-webkit-scrollbar {
+  display: none;
+}
+
+/* guaranteed dark divider — Tailwind divide-* from JS files may not compile */
+.explore-divider > * + * {
+  border-top: 1px solid #2f3336;
+}
