@@ -1,4 +1,4 @@
-// Depends on ICONS from icons.js
+// Depends on the Icons from icons.js
 function TweetAction({ icon, color, count }) {
   return `
     <button class="flex items-center gap-1 hover:text-${color} transition cursor-pointer">
@@ -32,10 +32,10 @@ class Tweet {
       </div>
       <div class="flex-1 min-w-0">
         <div class="flex items-center gap-2 flex-wrap">
-          <span class="font-bold text-white text-base sm:text-lg">${this.name}</span>
+          <span class="font-bold text-white sm:text-lg">${this.name}</span>
           <span class="text-gray-500 text-sm sm:text-base">${this.handle} · ${this.time}</span>
         </div>
-        <div class="text-white text-base sm:text-xl mt-2 leading-relaxed break-words">${this.content}</div>
+        <div class="text-white sm:text-xl mt-2 break-words">${this.content}</div>
         <div class="flex justify-between max-w-full sm:max-w-lg mt-4 text-gray-500">
           ${TweetAction({ icon: ICONS.reply,     color: 'blue-400',  count: this.replies  })}
           ${TweetAction({ icon: ICONS.retweet,   color: 'green-500', count: this.retweets })}

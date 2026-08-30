@@ -11,7 +11,7 @@ const FOLLOW_SUGGESTIONS = [
   { avatar: 'https://pbs.twimg.com/profile_images/1710911871551685633/0r6g1j7A_400x400.jpg', name: 'Marc Andreessen', handle: '@pmarca', verified: false },
 ];
 
-// Depends on ICONS from icons.js
+// Depends on the icons from icons.js
 function TrendItem({ location, topic, count }) {
   return `
     <div class="flex justify-between items-start px-4 py-2 hover:bg-gray-800 cursor-pointer transition">
@@ -33,13 +33,13 @@ function FollowItem({ avatar, name, handle, verified }) {
         <img src="${avatar}" alt="${name}" class="w-10 h-10 rounded-full shrink-0">
         <div class="min-w-0">
           <div class="flex items-center gap-2">
-            <span class="font-bold text-md hover:underline truncate">${name}</span>
-            ${verified ? `<svg class="w-4 h-4 fill-blue-400 shrink-0" viewBox="0 0 24 24" aria-hidden="true">${ICONS.verified}</svg>` : ''}
+            <span class="font-bold text-md hover:underline">${name}</span>
+            ${verified ? `<svg class="w-4 h-4 fill-blue-400" viewBox="0 0 24 24" aria-hidden="true">${ICONS.verified}</svg>` : ''}
           </div>
-          <p class="text-md text-gray-500 truncate">${handle}</p>
+          <p class="text-md text-gray-500">${handle}</p>
         </div>
       </div>
-      <button class="bg-white text-black font-bold px-4 py-2 rounded-full hover:bg-gray-200 transition text-sm shrink-0">
+      <button class="bg-white text-black font-bold px-4 py-2 rounded-full hover:bg-gray-200 transition text-sm">
         Follow
       </button>
     </div>`;

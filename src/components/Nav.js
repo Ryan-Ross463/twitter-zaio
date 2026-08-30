@@ -72,7 +72,7 @@ const NAV_ITEMS = [
   },
 ];
 
-// Wraps in <a> when a href is provided, plain <li> otherwise
+// The html template for the nav bar.
 function NavItem({ label, iconClass, textClass, svg, href }) {
   const itemClass = `flex items-center justify-center lg:justify-start gap-4 p-2 lg:p-3
     hover:bg-neutral-900/10 dark:hover:bg-white/10 rounded-full cursor-pointer
@@ -82,7 +82,5 @@ function NavItem({ label, iconClass, textClass, svg, href }) {
     <svg viewBox="0 0 24 24" aria-hidden="true" class="${iconClass} fill-current">${svg}</svg>
     <span class="text-lg xl:text-xl ${textClass} hidden lg:inline">${label}</span>`;
 
-  return href
-    ? `<li><a href="${href}" class="${itemClass}">${content}</a></li>`
-    : `<li class="${itemClass}">${content}</li>`;
+  return href ? `<li><a href="${href}" class="${itemClass}">${content}</a></li>` : `<li class="${itemClass}">${content}</li>`;
 }

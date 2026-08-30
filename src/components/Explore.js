@@ -1,5 +1,4 @@
 //Explore page data
-
 const EXPLORE_TABS = ['Explore', 'Trending', 'News', 'Sports', 'Entertainment'];
 
 //My Custom Code
@@ -42,7 +41,7 @@ function ExploreTab({ label, active }) {
   const inactiveClass = 'text-gray-500 hover:text-white hover:bg-white/5';
 
   return `
-    <button data-tab="${label}" class="explore-tab flex-1 py-4 text-sm sm:text-base transition relative ${active ? activeClass : inactiveClass}">
+    <button data-tab="${label}" class="explore-tab flex-1 py-4 transition relative ${active ? activeClass : inactiveClass}">
       ${label}
       ${active ? '<div class="absolute bottom-0 left-0 right-0 h-1 bg-blue-400 rounded-full"></div>' : ''}
     </button>`;
@@ -54,7 +53,7 @@ function NewsItem({ title, category, time, posts }) {
     <div class="flex items-start gap-3 px-4 py-3 hover:bg-white/5 cursor-pointer transition">
       <div class="flex-1 min-w-0">
         <p class="text-xs text-gray-500">${category} · ${time}</p>
-        <p class="font-bold text-white text-sm leading-snug mt-1">${title}</p>
+        <p class="font-bold text-white text-sm mt-1">${title}</p>
         <p class="text-xs text-gray-500 mt-1">${posts}</p>
       </div>
     </div>`;
@@ -66,7 +65,7 @@ function TrendingRow({ category, topic, posts }) {
     <div class="flex justify-between items-start px-4 py-3 hover:bg-white/5 cursor-pointer transition">
       <div>
         <p class="text-xs text-gray-500">${category}</p>
-        <p class="font-bold text-white text-base mt-0.5">${topic}</p>
+        <p class="font-bold text-white mt-0.5">${topic}</p>
         <p class="text-xs text-gray-500 mt-0.5">${posts}</p>
       </div>
       <button class="text-gray-500 hover:text-blue-400 p-2 rounded-full hover:bg-blue-400/10 transition mt-1">
